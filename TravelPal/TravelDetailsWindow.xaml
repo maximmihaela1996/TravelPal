@@ -1,0 +1,57 @@
+﻿<Window x:Class="TravelPal.TravelDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:TravelPal"
+        mc:Ignorable="d"
+        Title="TravelPal - Travel Details" Height="620" Width="720" FontSize="20" Background="LightSteelBlue">
+
+    <Border Padding="20" Margin="0,0,37,0">
+        <Grid Margin="96,3,-96,-3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <TextBlock Text="Details" FontSize="30"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="1" Margin="0, 20, 0, 0">
+                <TextBlock Text="Starting Date"/>
+                <DatePicker Name="dpStartingDate" Background="MintCream"/>
+                <TextBlock Text="Ending Date" Margin="0, 20, 0 ,0"/>
+                <DatePicker Name="dpEndDate" Background="MintCream"/>
+                <TextBlock Text="Duration of travel" Margin="0, 20, 0 ,0"/>
+                <TextBox Name="tbTravelLength" IsEnabled="false" Style="{StaticResource travelPalTextBoxes}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="1"  Grid.ColumnSpan="1">
+                <TextBlock Text="Destination" />
+                <TextBox x:Name="tbDestination"/>
+                <TextBlock Text="Country" Margin="0, 20, 0 ,0"/>
+                <ComboBox x:Name="cbDetailsCountry"/>
+                <TextBlock Text="Travelers" Margin="0, 20, 0 ,0"/>
+                <TextBox x:Name="tbTravelers"/>
+                <TextBlock Text="Travel Type" Margin="0, 20, 0 ,0"/>
+                <ComboBox x:Name="cbTravelType"/>
+                <CheckBox x:Name="xbAllInclusive" Visibility="Hidden" Content="All Inclusive" VerticalContentAlignment="Center"/>
+                <TextBlock x:Name="txtTripType" Visibility="Hidden" Text="Trip Type" Margin="0, 0, 0, 0"/>
+                <ComboBox x:Name="cbTripType" Visibility="Hidden" Style="{StaticResource travelPalComboBox}"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="0" Grid.Row="3" Orientation="Horizontal" Grid.ColumnSpan="2"/>
+
+            <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="3"/>
+
+        </Grid>
+    </Border>
+
+</Window>
